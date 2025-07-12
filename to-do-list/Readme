@@ -1,0 +1,22 @@
+Project: To-Do List
+I created this project as a way to study and strengthen my knowledge in HTML, CSS, and vanilla JavaScript. 
+The goal was to build a simple yet functional to-do list application while focusing on core web development concepts.
+
+Main goals and focus points:
+DOM manipulation using plain JavaScript:
+I practiced how to dynamically add, remove, and update elements on the page without using any external libraries.
+
+Input validation and user feedback:
+Implemented a check to prevent empty tasks from being added, improving the overall user experience.
+
+Custom text formatting function:
+Developed the adjustLetters() function to automatically format user input by capitalizing words according to specific rules 
+(e.g., keeping certain keywords in uppercase or with custom formatting).
+
+Styling with CSS:
+Designed a clean and user-friendly interface with basic responsiveness and hover effects to enhance usability and visual appeal.
+
+Practice of clean code principles:
+Used clear variable names, structured the project with separate HTML/CSS/JS files, and added comments to improve readability and maintainability.
+
+This project helped me solidify my JavaScript fundamentals and improve my front-end development skills, and I plan to keep enhancing it as I learn more.
