@@ -1,0 +1,59 @@
+⏱ JavaScript Stopwatch
+A simple, browser-based Stopwatch built using vanilla JavaScript and DOM manipulation.
+It allows users to start, stop, and reset the timer with an accurate HH:MM:SS display.
+
+📜 Features
+Start / Stop / Reset controls
+
+Live updating display in the HH:MM:SS format
+
+Accurate second-by-second tracking
+
+Reusable Stopwatch class with:
+
+Encapsulated elapsed time tracking
+
+Start, stop, and reset methods
+
+Static formatting utilities (formatTime, zeroPadding)
+
+Works entirely in the browser without external libraries
+
+🛠️ Technologies Used
+Language: JavaScript (ES6+)
+
+HTML for structure
+
+CSS for styling (https://coolors.co/003052-cc004e-ffdb99-f7f3f3-1830b4)
+
+DOM API for interaction
+
+📂 Project Structure
+bash
+Copiar
+Editar
+📁 js-stopwatch
+├── index.html # Main HTML page
+├── style.css # Optional styling
+└── script.js # Stopwatch class & event handling
+💻 Usage
+Start — Begins counting from 00:00:00
+
+Stop — Pauses the stopwatch at the current time
+
+Reset — Sets the display back to 00:00:00
+
+📸 Screenshot
+![alt text](image.png)
+
+💡 Future Improvements
+Add lap tracking for recording split times
+
+Support millisecond precision
+
+Implement countdown mode
+
+Add keyboard shortcuts for quick controls
+
+📄 License
+This project is licensed under the MIT License – you are free to use, modify, and distribute it.
