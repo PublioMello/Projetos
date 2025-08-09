@@ -1,0 +1,84 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", "Raleway", sans-serif;
+}
+
+:root {
+  --stopwatch-primary-watch: #002642;
+  --stopwatch-primary-color: #003052;
+  --stopwatch-secondary-color: #840032;
+  --stopwatch-secondary-shade: #CC004E;
+  --stopwatch-light-color: #FFDB99;
+  --body-background-color: #F7F3F3;
+  --background-wrapper-color: #0F1D6C;
+  --stopwatch-primary-shade: #1830B4;
+}
+
+@media (max-width: 600px) {
+  :root {
+    font-size: 10px;
+
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
+  background-color: var(--body-background-color);
+}
+
+
+button {
+  all: unset;
+  cursor: pointer;
+  border: 2px solid var(--stopwatch-light-color);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: var(--background-wrapper-color);
+  color: var(--stopwatch-light-color);
+  justify-content: space-between;
+}
+
+button.secondary-button {
+  background-color: var(--stopwatch-secondary-color);
+
+}
+
+button:hover {
+  background-color: var(--stopwatch-primary-shade);
+}
+
+button.secondary-button:hover {
+  background-color: var(--stopwatch-secondary-shade);
+}
+
+button:focus {
+  border: 2px solid #000000;
+}
+
+.button-box {
+  margin: 1remn 0 0.5rem 0;
+}
+
+#stopwatch-display {
+  font-family: "Major Mono Display", "Orbitron";
+  background-color: var(--stopwatch-primary-watch);
+  color: #ffffff;
+  text-align: center;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  margin: 0 0 1rem 0;
+}
+
+#stopwatch-wrapper {
+  background-color: var(--stopwatch-primary-color);
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
