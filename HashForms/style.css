@@ -1,0 +1,234 @@
+/* 
+  CSS para um site de e-commerce ou página de checkout
+  Estilo geral com tema escuro e detalhes em laranja
+*/
+
+/* ============ VARIÁVEIS DE CORES ============ */
+:root {
+  --background: #30343f; /* Cor de fundo geral do site */
+  --primary: #1e2749; /* Cor de fundo dos containers principais */
+  --secondary: #273469; /* Cor de fundo para seções internas ou boxes */
+  --text-realce: #fb8500; /* Cor de destaque para títulos e elementos importantes */
+  --text: #aaa; /* Cor padrão do texto */
+  --focus: #ff9f1c; /* Cor ao focar em campos de formulário */
+  --safe: #45a049; /* Cor de confirmação/sucesso, ex: hover positivo */
+  --input-background: #444; /* Fundo dos campos de entrada */
+  --input-border: #555; /* Cor da borda dos inputs */
+  --button-background: #4caf50; /* Cor de fundo dos botões */
+  --white: #fff; /* Branco usado em textos e detalhes */
+}
+
+/* ============ ESTILOS GERAIS ============ */
+body {
+  font-family: Arial, sans-serif; /* Fonte principal */
+  background-color: var(--background); /* Aplica cor de fundo definida */
+  margin: 0; /* Remove espaçamento externo */
+  padding: 0; /* Remove espaçamento interno */
+  color: var(--white); /* Cor padrão do texto */
+}
+
+#container {
+  width: 80%; /* Largura principal do conteúdo */
+  margin: 0 auto; /* Centraliza horizontalmente */
+  background-color: var(--primary); /* Fundo do container principal */
+  padding: 20px; /* Espaço interno do container */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil para profundidade */
+  border-radius: 8px; /* Bordas arredondadas */
+}
+
+/* ============ SEÇÃO DE IMAGENS ============ */
+.images {
+  text-align: center; /* Centraliza imagens */
+  margin-bottom: 20px; /* Espaço inferior */
+  padding: 10px; /* Espaçamento interno */
+}
+
+/* ============ LAYOUT DOS BOXES ============ */
+.boxes {
+  display: flex; /* Layout flexível para elementos filhos */
+  flex-wrap: wrap; /* Permite quebra de linha em telas pequenas */
+  gap: 20px; /* Espaçamento entre os boxes */
+}
+
+.box1,
+.box2 {
+  flex: 1; /* Cada box ocupa espaço igual */
+  background-color: var(--secondary); /* Cor de fundo das boxes */
+  padding: 15px; /* Espaço interno */
+  border-radius: 5px; /* Cantos arredondados */
+}
+
+.box2 {
+  max-width: 30%; /* Limita largura da box2 */
+}
+
+/* ============ ESTILOS DE TÍTULOS ============ */
+h1,
+h2,
+h3 {
+  color: var(--text-realce); /* Aplica cor de destaque */
+  font-size: 1.5rem; /* Define tamanho uniforme para títulos */
+}
+
+/* ============ FORMULÁRIO DE DADOS ============ */
+.meus-dados {
+  width: 90%; /* Largura relativa ao container */
+  max-width: none; /* Remove limite máximo */
+  margin: 20px 0; /* Espaçamento vertical */
+  padding: 20px; /* Espaçamento interno */
+}
+
+#formulario {
+  margin-top: 15px; /* Espaço acima do formulário */
+}
+
+fieldset {
+  border: 1px solid var(--input-border); /* Borda ao redor do grupo de campos */
+  padding: 10px; /* Espaço interno */
+  border-radius: 5px; /* Bordas levemente arredondadas */
+  margin-bottom: 15px; /* Espaço inferior entre fieldsets */
+}
+
+legend {
+  color: var(--text-realce); /* Cor de destaque no título do grupo */
+  font-weight: bold; /* Texto em negrito */
+}
+
+label {
+  display: block; /* Cada label em nova linha */
+  margin-bottom: 5px; /* Espaço abaixo do rótulo */
+  font-weight: 700; /* Deixa o rótulo em negrito */
+  flex-basis: 150px; /* Largura mínima em layouts flexíveis */
+}
+
+/* ============ ESTILOS DE INPUTS ============ */
+input[type="text"],
+input[type="number"] {
+  width: 100%; /* Ocupa toda a largura disponível */
+  padding: 10px; /* Espaço interno no campo */
+  margin-bottom: 10px; /* Espaço inferior entre inputs */
+  border: 1px solid var(--input-border); /* Borda do input */
+  border-radius: 5px; /* Bordas arredondadas */
+  background-color: var(--input-background); /* Fundo escuro */
+  color: var(--white); /* Texto branco */
+  font-size: 1rem; /* Tamanho de fonte padrão */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  border-color: var(--focus); /* Borda laranja ao focar */
+  outline: none; /* Remove contorno padrão do navegador */
+}
+
+/* ============ GRUPOS DE FORMULÁRIO ============ */
+.form-group {
+  display: flex; /* Layout flexível para rótulos e inputs */
+  align-items: center; /* Alinha verticalmente ao centro */
+  gap: 10px; /* Espaço entre elementos */
+  margin-bottom: 10px; /* Espaço inferior do grupo */
+}
+
+/* ============ BOTÕES ============ */
+#form-btn {
+  width: 100%; /* Botão ocupa toda a largura */
+  padding: 10px; /* Espaçamento interno */
+  font-size: 1em; /* Tamanho da fonte relativo */
+  background-color: var(--button-background); /* Cor de fundo do botão */
+  color: var(--white); /* Cor do texto */
+  border: none; /* Remove borda */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor ao passar */
+}
+
+#form-btn:hover {
+  background-color: var(--safe); /* Muda a cor ao passar o mouse */
+}
+
+/* ============ SEÇÃO DE DESCONTO ============ */
+.apply-discount {
+  border-top: 1px solid var(--input-border); /* Linha separando a seção */
+  padding-top: 10px; /* Espaço acima do conteúdo */
+  margin-top: 10px; /* Distância da seção anterior */
+}
+
+.aplly-discount-header {
+  display: flex; /* Layout flexível */
+  justify-content: space-between; /* Espaço entre elementos */
+  align-items: center; /* Alinhamento vertical */
+  cursor: pointer; /* Cursor de clique */
+  color: var(--text-realce); /* Cor laranja de destaque */
+}
+
+.aplicar-desconto-body {
+  margin: 10px; /* Espaço interno da área de desconto */
+}
+
+.aplicar-desconto-body,
+input[type="text"] {
+  width: 95%; /* Largura quase total */
+  margin-left: 0; /* Remove margem à esquerda */
+  margin-right: 5px; /* Pequeno espaço à direita */
+}
+
+/* ============ ÍCONES ============ */
+.icons {
+  display: flex; /* Layout flexível para os ícones */
+  flex-flow: row; /* Alinha horizontalmente */
+  justify-content: center; /* Centraliza os ícones */
+  gap: 10px; /* Espaçamento entre ícones */
+  margin-bottom: 10px; /* Espaço inferior */
+}
+
+.icons i {
+  font-size: 25px; /* Tamanho dos ícones */
+}
+
+/* ============ BOX DE GARANTIA ============ */
+.garantia-box {
+  display: flex; /* Layout flexível */
+  flex-flow: column; /* Alinhamento vertical */
+  align-items: center; /* Centraliza os elementos */
+  border-top: 1px solid var(--input-border); /* Linha superior */
+  border-bottom: 1px solid var(--input-border); /* Linha inferior */
+}
+
+.safe-img {
+  display: flex; /* Para permitir alinhamento interno se necessário */
+  width: 100%; /* Imagem ocupa toda a largura disponível */
+  border-radius: 10%; /* Cantos arredondados */
+  margin-bottom: 10px; /* Espaço inferior da imagem */
+}
+
+/* ============ BOTÃO DE DESCONTO ============ */
+#discount-btn {
+  background-color: var(--text-realce); /* Fundo laranja */
+  color: var(--white); /* Texto branco */
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 1em; /* Tamanho do texto */
+  border: none; /* Sem bordas */
+  border-radius: 5px; /* Cantos arredondados */
+  cursor: pointer; /* Cursor interativo */
+}
+
+#discount-btn:hover {
+  background-color: var(--focus); /* Cor ao passar o mouse */
+}
+
+/* ============ RODAPÉ ============ */
+footer {
+  text-align: center; /* Centraliza conteúdo */
+  margin-top: 20px; /* Espaço acima do rodapé */
+}
+
+footer a {
+  color: var(--text-realce); /* Links em laranja */
+  text-decoration: none; /* Remove sublinhado padrão */
+}
+
+footer a:hover {
+  text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+footer p {
+  color: var(--text); /* Texto secundário em cinza claro */
+}
