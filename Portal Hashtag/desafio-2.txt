@@ -1,0 +1,16 @@
+https://www.hashtagtreinamentos.com/
+
+O objetivo para o Desafio 2 nesse módulo (Flexbox no CSS) é acrescentar tudo que aprendemos sobre construção de layouts nesse módulo.
+
+Lembre-se que conseguimos mexer em várias coisas com Flexbox:
+
+Orientação
+Posicionamento
+Alinhamento
+Espaçamento
+Tamanho
+Ordem
+
+Estamos quase terminando a Home da Hashtag. Vamos com tudo!
+
+Divirta-se!
