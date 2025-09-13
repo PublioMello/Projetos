@@ -133,6 +133,10 @@ input::placeholder {
 /* Cabeçalho */
 
 .cabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3.12rem;
   position: sticky;
   z-index: 9999;
   top: 0;
@@ -142,10 +146,34 @@ input::placeholder {
   box-shadow: 0 0.21rem 0.4rem rgba(0, 0, 0, 0.1);
 }
 
-/* Temporário */
-nav {
-  display: none;
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
 }
+
+.contem-filhos {
+  position: relative;
+}
+
+.contem-filhos ul {
+  display: block;
+  position: absolute;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 2.5rem;
+  box-shadow: 0 0.21rem 0.4rem rgba(0, 0, 0, 0.1);
+}
+
+/* 
+.contem-filhos:hover ul {
+  display: block;
+  position: absolute;
+  
+  padding: 1.6rem;
+  border-radius: 1.6rem;
+  margin-top: 1.6rem;
+} */
 
 .item-lista-cabecalho a {
   color: #112e61;
@@ -370,9 +398,11 @@ nav {
 .oquefalam-carrossel-img--1 {
   background-image: url(https://i3.ytimg.com/vi/N_EZD04zmrw/hqdefault.jpg);
 }
+
 .oquefalam-carrossel-img--2 {
   background-image: url(https://i3.ytimg.com/vi/auqWeBJLJHY/hqdefault.jpg);
 }
+
 .oquefalam-carrossel-img--3 {
   background-image: url(https://i3.ytimg.com/vi/FD79IpCaM1Y/hqdefault.jpg);
 }
