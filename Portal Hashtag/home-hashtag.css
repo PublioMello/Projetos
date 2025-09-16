@@ -609,37 +609,61 @@ nav ul {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.container-namidia {
+  display: flex;
+  gap: 3.12rem;
+  justify-content: space-between;
+}
 
-.seta-namidia,
-.h2-namidia {
-  display: inline-block;
+.namidia-titulo {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.namidia-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
 /* Seção Blog */
 
 .container-blog {
+  display: flex;
+  flex-flow: row wrap;
   position: relative;
   background-color: #f9f9f9;
   padding: 4.88rem;
+  gap: 2rem;
+  padding-top: 6.1rem;
 }
 
 .caixa-blog-h2 {
   width: max-content;
   background-image: linear-gradient(90deg, #feb914, #f6a50b);
   padding: 1.02rem 3.12rem;
+  margin-top: -1rem;
 }
 
 .caixa-postblog {
-  display: inline-block;
+  display: flex;
+  flex-flow: column;
+  flex: 1 1 40%;
+  gap: 1.28rem;
   border-radius: 2.5rem;
   box-shadow: inset 0 0 0.4rem 0.15rem rgba(0, 0, 0, 0.15);
   padding: 2rem;
-  width: 49%;
+
   background-color: #fff;
 }
 
 .caixa-postblog img {
   width: 100%;
+}
+.caixa-imgpostadoem {
+  display: flex;
+  flex-flow: column;
+  gap: 0.33rem;
 }
 
 .blog-postadoem {
