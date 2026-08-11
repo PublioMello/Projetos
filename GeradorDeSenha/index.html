@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gerador de Senha</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main id="app">
+    <h1>🔐 Gerador de Senha</h1>
+
+    <div id="output-row">
+      <input type="text" id="password-output" readonly placeholder="Sua senha vai aparecer aqui" />
+      <button id="copy-btn" title="Copiar">📋</button>
+    </div>
+    <p id="copy-feedback" class="hidden">Copiado!</p>
+
+    <div class="field">
+      <label for="length-input">Tamanho: <span id="length-value">12</span></label>
+      <input type="range" id="length-input" min="4" max="32" value="12" />
+    </div>
+
+    <div class="checkboxes">
+      <label><input type="checkbox" id="uppercase" checked /> Letras maiúsculas (A-Z)</label>
+      <label><input type="checkbox" id="lowercase" checked /> Letras minúsculas (a-z)</label>
+      <label><input type="checkbox" id="numbers" checked /> Números (0-9)</label>
+      <label><input type="checkbox" id="symbols" /> Símbolos (!@#$%)</label>
+    </div>
+
+    <button id="generate-btn">Gerar Senha</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

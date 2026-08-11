@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+#app {
+  background: #fff;
+  width: 90%;
+  max-width: 420px;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 1.4rem;
+  color: #222;
+}
+
+#output-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+#password-output {
+  flex: 1;
+  padding: 12px;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  background: #f7f7fa;
+  color: #222;
+}
+
+#copy-btn {
+  border: none;
+  border-radius: 10px;
+  background: #2c5364;
+  color: #fff;
+  font-size: 1.2rem;
+  width: 48px;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+#copy-btn:hover {
+  background: #203a43;
+}
+
+#copy-feedback {
+  color: #2ecc71;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin: 4px 0 20px;
+}
+
+#copy-feedback.hidden {
+  visibility: hidden;
+}
+
+.field {
+  margin-bottom: 20px;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #444;
+  font-weight: 600;
+}
+
+.field input[type="range"] {
+  width: 100%;
+}
+
+.checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.checkboxes label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #333;
+  cursor: pointer;
+}
+
+#generate-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  background: #2c5364;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+#generate-btn:hover {
+  background: #203a43;
+}
