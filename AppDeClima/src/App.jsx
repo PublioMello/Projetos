@@ -14,6 +14,10 @@ function App() {
       const data = await apiAnswer.json();
 
       console.log(data);
+      if (!data.results) {
+        setError("Cidade nao existe");
+        return;
+      }
       const place = data.results[0];
       const latitude = place.latitude;
       const longitude = place.longitude;
@@ -23,6 +27,12 @@ function App() {
       );
       const climeData = await cityClimeResponse.json();
 
+      setClime({
+        cityName: place.name,
+        temperature: climeData.current.temperature_2m,
+        humidity: climeData.current.relative_humidity_2m,
+        wind: climeData.current.wind_speed_10m,
+      });
       console.log(climeData);
     } catch (error) {
       setError("Nao foi possivel buscar cidade.");
@@ -36,10 +46,11 @@ function App() {
 
     const cityName = city.trim();
 
-    if (!city) {
+    if (!cityName) {
       return;
     }
     setLoad(true);
+    setError("");
     setClime(null);
 
     searchClime(cityName);
@@ -60,22 +71,20 @@ function App() {
         <button type="submit">Buscar</button>
       </form>
 
-      <p id="loading" className="hidden">
-        Carregando...
-      </p>
-      <p id="error" className="hidden">
-        Cidade não encontrada. Tente novamente.
-      </p>
+      {load && <p id="loading">Carregando...</p>}
+      {error && <p id="error">{error}</p>}
 
-      <section id="weather-card" className="hidden">
-        <h2 id="city-name">Nome da cidade</h2>
-        <p id="weather-description">Descrição do tempo</p>
-        <div id="temperature">--°C</div>
-        <div id="extra-info">
-          <span id="humidity">Umidade: --%</span>
-          <span id="wind">Vento: -- km/h</span>
-        </div>
-      </section>
+      {clime && (
+        <section id="weather-card">
+          <h2 id="city-name">{clime.cityName}</h2>
+          <p id="weather-description">Descrição do tempo</p>
+          <div id="temperature">{clime.temperature}°C</div>
+          <div id="extra-info">
+            <span id="humidity">Umidade: {clime.humidity}%</span>
+            <span id="wind">Vento: {clime.wind} km/h</span>
+          </div>
+        </section>
+      )}
     </main>
   );
 }
