@@ -33,6 +33,7 @@ function App() {
         humidity: climeData.current.relative_humidity_2m,
         wind: climeData.current.wind_speed_10m,
       });
+      setCity("");
       console.log(climeData);
     } catch (error) {
       setError("Nao foi possivel buscar cidade.");
@@ -66,6 +67,7 @@ function App() {
           id="city-input"
           placeholder="Digite uma cidade..."
           autoComplete="off"
+          value={city}
           onChange={(event) => setCity(event.target.value)}
         />
         <button type="submit">Buscar</button>

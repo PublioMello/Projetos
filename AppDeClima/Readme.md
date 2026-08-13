@@ -1,25 +1,69 @@
 # App de Clima
 
-Interface convertida para React com Vite. A lógica de busca de clima continua propositalmente sem implementação.
+Aplicação web em React que consulta o clima atual de uma cidade usando as APIs gratuitas da Open-Meteo.
 
-## O que já está pronto
-- Layout completo (busca, loading, erro e card de clima)
-- Componente visual em `src/App.jsx`
-- Estilos em `src/index.css`
+## Funcionalidades
 
-## Executar
+- Busca cidades pelo nome
+- Exibe temperatura, umidade e velocidade do vento atuais
+- Mostra o nome da cidade encontrada
+- Informa quando a cidade não existe ou quando ocorre um erro na busca
+- Exibe um indicador enquanto a requisição está em andamento
 
-```bash
-npm install
-npm run dev
+## Tecnologias
+
+- React
+- Vite
+- JavaScript
+- CSS
+- [Open-Meteo Geocoding API](https://open-meteo.com/en/docs/geocoding-api)
+- [Open-Meteo Forecast API](https://open-meteo.com/en/docs)
+
+## Como executar
+
+1. Clone este repositório ou abra a pasta do projeto.
+2. Instale as dependências:
+
+   ```bash
+   npm install
+   ```
+
+3. Inicie o servidor de desenvolvimento:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Abra no navegador o endereço exibido no terminal.
+
+## Como funciona
+
+Quando uma cidade é pesquisada, a aplicação faz duas requisições:
+
+1. A API de geocoding recebe o nome da cidade e retorna sua latitude e longitude.
+2. A API de previsão usa essas coordenadas para retornar os dados atuais de temperatura, umidade e vento.
+
+Os dados são armazenados no estado do React e renderizados no card de clima.
+
+## Estrutura do projeto
+
+```text
+.
+├── src/
+│   ├── App.jsx       # Componente principal e busca das APIs
+│   ├── index.css     # Estilos da interface
+│   └── main.jsx      # Ponto de entrada do React
+├── index.html
+├── package.json
+└── vite.config.js
 ```
 
-## APIs sugeridas (gratuitas, sem chave)
-- Geocoding: `https://geocoding-api.open-meteo.com/v1/search?name=CIDADE&count=1&language=pt`
-- Clima: `https://api.open-meteo.com/v1/forecast?latitude=LAT&longitude=LON&current_weather=true`
-
 ## Build de produção
+
+Para gerar os arquivos otimizados para publicação:
 
 ```bash
 npm run build
 ```
+
+Os arquivos serão criados na pasta `dist/`.
