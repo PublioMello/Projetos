@@ -3,35 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quiz</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Quiz de JavaScript</title>
 </head>
 <body>
-  <main id="quiz-container">
-    <!-- Tela do quiz -->
-    <section id="question-screen">
-      <div id="progress">Pergunta 1 de 5</div>
-
-      <h2 id="question-text">A pergunta vai aparecer aqui</h2>
-
-      <div id="options">
-        <button class="option-btn" data-index="0">Alternativa A</button>
-        <button class="option-btn" data-index="1">Alternativa B</button>
-        <button class="option-btn" data-index="2">Alternativa C</button>
-        <button class="option-btn" data-index="3">Alternativa D</button>
-      </div>
-
-      <button id="next-btn" disabled>Próxima</button>
-    </section>
-
-    <!-- Tela de resultado -->
-    <section id="result-screen" class="hidden">
-      <h2>Resultado</h2>
-      <p id="score-text">Você acertou 0 de 5</p>
-      <button id="restart-btn">Jogar novamente</button>
-    </section>
-  </main>
-
-  <script src="script.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>
