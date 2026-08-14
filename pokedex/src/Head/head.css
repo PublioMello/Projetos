@@ -1,12 +1,18 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 .head {
   display: flex;
   align-items: center;
-  justify-content: space-between
+  justify-content: space-between;
+  gap: 20px;
+  padding: 8px 7%;
+  background: linear-gradient(120deg, #d90429, #ef233c);
+  border-bottom: 5px solid #2b2d42;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.2);
 }
 
 .head__left {
@@ -16,18 +22,100 @@
 
 .head-logo {
   height: auto;
-  width: 200px;
-
-
+  width: min(125px, 35vw);
+  display: block;
 }
 
 .head__right {
   display: flex;
-  align-items: center;
-  justify-content: space-around;
-  width: 40%;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 
-.head__right ul {
-  font-size: 30px;
+.head__navigation {
+  display: flex;
+  list-style: none;
+  gap: 8px;
+}
+
+.head__menu {
+  position: relative;
+}
+
+.head__menu button {
+  width: 100%;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  font: inherit;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.head__menu-trigger {
+  min-width: 76px;
+}
+
+.head__menu-trigger span {
+  margin-left: 6px;
+}
+
+.head__menu button:hover {
+  background: #fff;
+  color: #d90429;
+  transform: translateY(-2px);
+}
+
+.head__submenu {
+  position: absolute;
+  z-index: 10;
+  top: calc(100% + 9px);
+  right: 0;
+  display: none;
+  width: 150px;
+  padding: 8px;
+  list-style: none;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.head__submenu.is-open {
+  display: grid;
+  gap: 5px;
+}
+
+.head__submenu button {
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #2b2d42;
+  text-align: left;
+}
+
+.head__submenu button:hover {
+  background: #ffe3e7;
+  color: #d90429;
+  transform: none;
+}
+
+@media (max-width: 760px) {
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 24px;
+  }
+
+  .head__right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .head__navigation {
+    width: 100%;
+    justify-content: flex-start;
+  }
 }
