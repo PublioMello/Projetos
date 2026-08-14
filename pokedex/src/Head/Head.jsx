@@ -27,7 +27,9 @@ const Head = () => {
             >
               Tipos <span>⌄</span>
             </button>
-            <ul className={`head__submenu ${menuAberto === "tipos" ? "is-open" : ""}`}>
+            <ul
+              className={`head__submenu ${menuAberto === "tipos" ? "is-open" : ""}`}
+            >
               {tipos.map((tipo) => (
                 <li key={tipo}>
                   <button type="button">{tipo}</button>
@@ -44,7 +46,9 @@ const Head = () => {
             >
               Jogos <span>⌄</span>
             </button>
-            <ul className={`head__submenu ${menuAberto === "jogos" ? "is-open" : ""}`}>
+            <ul
+              className={`head__submenu ${menuAberto === "jogos" ? "is-open" : ""}`}
+            >
               {jogos.map((jogo) => (
                 <li key={jogo}>
                   <button type="button">{jogo}</button>
