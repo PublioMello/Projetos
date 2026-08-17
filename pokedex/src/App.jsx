@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Head />
-      <Body />;
+      <Body />
     </>
   );
 }

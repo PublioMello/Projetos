@@ -19,7 +19,7 @@ function Pokelist() {
         }),
       );
     }
-    setPokemon(pokemonDetails);
+    // setPokemon(pokemonDetails);
 
     fetchPokemon();
   }, []);

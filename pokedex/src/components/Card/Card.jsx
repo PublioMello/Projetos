@@ -1,7 +1,7 @@
 import React from "react";
 import "./Card.css";
 
-function Card({ image, name, type, number }) {
+function Card({ image, name, type1, type2, number }) {
   return (
     <div className="card">
       <div className="card__up">
@@ -15,8 +15,8 @@ function Card({ image, name, type, number }) {
       <div className="card__down">
         <p className="card__down-name">{name}</p>
         <div className="card__down-types">
-          <li className="card__down-types-1">{type}</li>
-          <li className="card__down-types-2">{type}</li>
+          <li className="card__down-types-1">{type1}</li>
+          {type2 && <li className="card__down-types-2">{type2}</li>}
         </div>
       </div>
 
