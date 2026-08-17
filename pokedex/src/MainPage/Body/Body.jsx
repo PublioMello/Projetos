@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import Card from "../../components/Card/Card.jsx";
+import Pokelist from "../../components/PokeList/Pokelist.jsx";
 import "./Body.css";
 
 function Body() {
+  // Estado do texto que o usuário digita na busca
   const [search, setSearch] = useState("");
+  // Estado para guardar o pokémon encontrado em uma pesquisa específica
   const [pokemon, setPokemon] = useState(null);
+  // Estado para mostrar mensagens de erro quando a busca falha
   const [error, setError] = useState("");
 
   async function searchPokemon(event) {
@@ -12,12 +16,14 @@ function Body() {
 
     const value = search.trim();
     if (!value) {
+      // Se o campo estiver vazio, não faz fetch
       setError("Digite o nome de um Pokémon para pesquisar.");
       setPokemon(null);
       return;
     }
 
     try {
+      // Busca o pokémon na API pelo nome digitado
       const response = await fetch(
         `https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`,
       );
@@ -31,6 +37,7 @@ function Body() {
       setError("");
       setSearch("");
     } catch (err) {
+      // Se a busca falhar, limpa o card e mostra mensagem
       setPokemon(null);
       setError("Pokémon não encontrado. Tente outro nome.");
     }
@@ -60,6 +67,10 @@ function Body() {
       </section>
 
       <section className="result-panel">
+        {/*
+          Se existir um pokémon pesquisado, mostra somente o card dele.
+          Caso contrário, mostra a lista completa embaixo da busca.
+        */}
         {pokemon ? (
           <Card
             image={pokemon.sprites.other["official-artwork"].front_default}
@@ -69,9 +80,7 @@ function Body() {
             number={pokemon.id}
           />
         ) : (
-          <div className="empty-state">
-            Pesquise pelo nome de um Pokémon e veja os detalhes aparecerem aqui.
-          </div>
+          <Pokelist />
         )}
       </section>
     </main>
