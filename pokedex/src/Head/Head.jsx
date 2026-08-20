@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import pokemonLogo from "../assets/pokemon2.png";
 import "./head.css";
+import { Link, useNavigate } from "react-router-dom";
 
 const Head = () => {
+  const navigate = useNavigate();
   const tipos = ["Fogo", "Planta", "Inseto", "Água"];
   const jogos = ["Red", "Yellow", "Silver", "Sapphire"];
   const [menuAberto, setMenuAberto] = useState(null);
@@ -14,7 +16,9 @@ const Head = () => {
   return (
     <header className="head">
       <div className="head__left">
-        <img src={pokemonLogo} alt="Logo do pokemon" className="head-logo" />
+        <Link to="/">
+          <img src={pokemonLogo} alt="Logo do pokemon" className="head-logo" />
+        </Link>
       </div>
       <nav className="head__right" aria-label="Filtros da Pokédex">
         <ul className="head__navigation">
