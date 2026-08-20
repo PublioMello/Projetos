@@ -1,13 +1,27 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function PokemonPage() {
   const { id } = useParams();
   const [pokemon, setPokemon] = useState();
+  const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
-  }, []);
+    async function fetchPokemon() {
+      try {
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+        if (!response.ok) {
+          navigate("/erro", { replace: true });
+          return;
+        }
+        const data = await response.json();
+        setPokemon(data);
+      } catch {
+        navigate("/erro", { replace: true });
+      }
+    }
+    fetchPokemon();
+  }, [id, navigate]);
 
   return (
     <div>
