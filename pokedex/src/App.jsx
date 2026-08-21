@@ -10,6 +10,7 @@ function App() {
     <BrowserRouter>
       <Head />
       <Routes>
+        <Route path="*" element={<ErrorPage />} />
         <Route path="/" element={<Body />} />
         <Route path="/pokemon/:id" element={<PokemonPage />} />
         <Route path="/erro" element={<ErrorPage />} />
